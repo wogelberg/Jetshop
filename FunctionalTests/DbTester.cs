@@ -9,10 +9,10 @@ namespace FunctionalTests
 
         public DbTester()
         {
-            EnsureDbExistsOrCreateIt();
+            CreateDbIfItDoesntExit();
         }
 
-        private void EnsureDbExistsOrCreateIt()
+        private void CreateDbIfItDoesntExit()
         {
             CarRentalContext.ConnectionString = TestConnectionString;
             using (var db = new CarRentalContext())
